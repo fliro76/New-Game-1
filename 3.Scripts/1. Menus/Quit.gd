@@ -6,8 +6,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 
-func _on_pressed():
-	print("Play_Button_Pressed")
-	"res://1.Levels/0.Gym/"
-	
+
+func _on_pressed() -> void:
+	print("Quit_Button_Pressed")

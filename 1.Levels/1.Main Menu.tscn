@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dh6lttmk2k50s" path="res://2.Assets/icon.svg" id="1_4ceyp"]
 [ext_resource type="Script" uid="uid://d32eu4sjvkhlr" path="res://3.Scripts/1. Menus/Play.gd" id="2_r8kir"]
+[ext_resource type="Script" uid="uid://4mw2w0qixxn1" path="res://3.Scripts/1. Menus/Quit.gd" id="3_3nmh5"]
+[ext_resource type="Script" uid="uid://dons3i012w1id" path="res://3.Scripts/1. Menus/Settings.gd" id="3_p75y0"]
 
 [node name="Node2D" type="Node2D" unique_id=1546405070]
 position = Vector2(960, 540)
@@ -40,8 +42,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.10700001
-offset_top = 76.1905
-offset_bottom = 156.12248
+offset_top = 77.97621
+offset_bottom = 157.9082
 grow_horizontal = 2
 text = "Play"
 icon = ExtResource("1_4ceyp")
@@ -57,6 +59,7 @@ offset_bottom = 229.93199
 grow_horizontal = 2
 text = "Settings"
 icon = ExtResource("1_4ceyp")
+script = ExtResource("3_p75y0")
 
 [node name="Quit" type="Button" parent="Menu Buttons/ItemList" unique_id=735570871]
 layout_mode = 1
@@ -68,5 +71,8 @@ offset_bottom = 472.19397
 grow_horizontal = 2
 text = "Quit"
 icon = ExtResource("1_4ceyp")
+script = ExtResource("3_3nmh5")
 
 [connection signal="pressed" from="Menu Buttons/ItemList/Play" to="Menu Buttons/ItemList/Play" method="_on_pressed"]
+[connection signal="pressed" from="Menu Buttons/ItemList/Settings" to="Menu Buttons/ItemList/Settings" method="_on_pressed"]
+[connection signal="pressed" from="Menu Buttons/ItemList/Quit" to="Menu Buttons/ItemList/Quit" method="_on_pressed"]

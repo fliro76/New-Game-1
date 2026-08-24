@@ -6,8 +6,5 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-
-func _on_pressed():
-	print("Play_Button_Pressed")
-	"res://1.Levels/0.Gym/"
-	
+func _on_pressed() -> void:
+	print("Setting_Button_Pressed")
