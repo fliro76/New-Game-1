@@ -10,7 +10,7 @@ position = Vector2(960, 540)
 [node name="Made With Goodot" type="Node" parent="Foot notes" unique_id=864523016]
 
 [node name="Made With Goodot" type="Sprite2D" parent="Foot notes/Made With Goodot" unique_id=1070614336]
-position = Vector2(1871, 1032)
+position = Vector2(1873, 1040)
 scale = Vector2(0.71874964, 0.60937476)
 texture = ExtResource("1_4ceyp")
 
