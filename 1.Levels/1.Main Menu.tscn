@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cli1c5oa7qhqk"]
+
+[ext_resource type="Texture2D" uid="uid://dh6lttmk2k50s" path="res://2.Assets/icon.svg" id="1_4ceyp"]
+
+[node name="Node2D" type="Node2D" unique_id=1546405070]
+position = Vector2(960, 540)
+
+[node name="Foot notes" type="Node2D" parent="." unique_id=239241207]
+
+[node name="Made With Goodot" type="Node" parent="Foot notes" unique_id=864523016]
+
+[node name="Made With Goodot" type="Sprite2D" parent="Foot notes/Made With Goodot" unique_id=1070614336]
+position = Vector2(1871, 1032)
+scale = Vector2(0.71874964, 0.60937476)
+texture = ExtResource("1_4ceyp")
+
+[node name="Label" type="Label" parent="Foot notes/Made With Goodot/Made With Goodot" unique_id=402244661]
+offset_left = -63.999966
+offset_top = -83.91111
+offset_right = 64.00003
+offset_bottom = -34.91111
+text = "Made with"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu Buttons" type="Node2D" parent="." unique_id=948131727]
