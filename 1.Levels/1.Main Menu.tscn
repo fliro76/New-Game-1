@@ -1,20 +1,28 @@
-[gd_scene format=3 uid="uid://cli1c5oa7qhqk"]
+[gd_scene format=3 uid="uid://csg48dukmh0h8"]
 
 [ext_resource type="Texture2D" uid="uid://dh6lttmk2k50s" path="res://2.Assets/icon.svg" id="1_4ceyp"]
+[ext_resource type="Script" uid="uid://d32eu4sjvkhlr" path="res://3.Scripts/1. Menus/Play.gd" id="2_r8kir"]
+[ext_resource type="Script" uid="uid://4mw2w0qixxn1" path="res://3.Scripts/1. Menus/Quit.gd" id="3_3nmh5"]
+[ext_resource type="Script" uid="uid://dons3i012w1id" path="res://3.Scripts/1. Menus/Settings.gd" id="3_p75y0"]
 
-[node name="Node2D" type="Node2D" unique_id=1546405070]
-position = Vector2(960, 540)
+[node name="1_mainMenu2" type="Control" unique_id=1688911920]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Foot notes" type="Node2D" parent="." unique_id=239241207]
+[node name="Foot notes" type="Node2D" parent="." unique_id=722911241]
 
-[node name="Made With Goodot" type="Node" parent="Foot notes" unique_id=864523016]
+[node name="Made With Goodot" type="Node" parent="Foot notes" unique_id=1838897524]
 
-[node name="Made With Goodot" type="Sprite2D" parent="Foot notes/Made With Goodot" unique_id=1070614336]
-position = Vector2(1871, 1032)
+[node name="Made With Goodot" type="Sprite2D" parent="Foot notes/Made With Goodot" unique_id=1569340385]
+position = Vector2(1873, 1040)
 scale = Vector2(0.71874964, 0.60937476)
 texture = ExtResource("1_4ceyp")
 
-[node name="Label" type="Label" parent="Foot notes/Made With Goodot/Made With Goodot" unique_id=402244661]
+[node name="Label" type="Label" parent="Foot notes/Made With Goodot/Made With Goodot" unique_id=252846168]
 offset_left = -63.999966
 offset_top = -83.91111
 offset_right = 64.00003
@@ -23,4 +31,57 @@ text = "Made with"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Menu Buttons" type="Node2D" parent="." unique_id=948131727]
+[node name="Menu Buttons" type="Node2D" parent="." unique_id=708243389]
+
+[node name="ItemList" type="Control" parent="Menu Buttons" unique_id=276260741]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 82.00002
+offset_right = 430.0
+offset_bottom = 606.0
+scale = Vector2(1.6799996, 1.6799996)
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="Menu Buttons/ItemList" unique_id=1631866009]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.05793342
+anchor_right = 1.0
+anchor_bottom = 0.04906659
+offset_top = 77.97621
+offset_bottom = 157.9082
+grow_horizontal = 2
+text = "Play"
+icon = ExtResource("1_4ceyp")
+script = ExtResource("2_r8kir")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="Menu Buttons/ItemList" unique_id=487469958]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.107000045
+offset_top = 213.69054
+offset_bottom = 293.62256
+grow_horizontal = 2
+text = "Settings"
+icon = ExtResource("1_4ceyp")
+script = ExtResource("3_p75y0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="Menu Buttons/ItemList" unique_id=1842087733]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.10700001
+offset_top = 392.262
+offset_bottom = 472.19397
+grow_horizontal = 2
+text = "Quit"
+icon = ExtResource("1_4ceyp")
+script = ExtResource("3_3nmh5")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Menu Buttons/ItemList/Play" to="Menu Buttons/ItemList/Play" method="_on_pressed"]
+[connection signal="pressed" from="Menu Buttons/ItemList/Settings" to="Menu Buttons/ItemList/Settings" method="_on_pressed"]
+[connection signal="pressed" from="Menu Buttons/ItemList/Quit" to="Menu Buttons/ItemList/Quit" method="_on_pressed"]
