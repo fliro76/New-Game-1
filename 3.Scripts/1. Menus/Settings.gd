@@ -4,20 +4,6 @@ extends Node
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Opens the Audio tab
-func _on_audio_toggled(toggled_on: bool) -> void:
-	if true:
-		%Audio.show
-	if false:
-		%Audio.hide
-
-#Opens the Graphics tab
-func _on_graphics_toggled(toggled_on: bool) -> void:
-	if true:
-		%Graphics.show
-	if false:
-		%Graphics.hide
-
 
 func _on_pressed() -> void:
 	print("Setting_Button_Pressed")

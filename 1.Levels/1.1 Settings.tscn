@@ -12,81 +12,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ua5vm")
 
-[node name="Tabs" type="Container" parent="." unique_id=1330940434]
+[node name="Tabs" type="TabContainer" parent="." unique_id=897016297]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 74.0
+offset_bottom = 31.0
 grow_horizontal = 2
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+switch_on_drag_hover = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Tabs" unique_id=816931063]
+[node name="Audio" type="MarginContainer" parent="Tabs" unique_id=298186906]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Audio" unique_id=1312675949]
 layout_mode = 2
 
-[node name="Audio" type="Button" parent="Tabs/HBoxContainer" unique_id=1020805273]
-layout_mode = 2
-toggle_mode = true
-action_mode = 0
-text = "Audio"
-
-[node name="Graphics" type="Button" parent="Tabs/HBoxContainer" unique_id=774861353]
-layout_mode = 2
-toggle_mode = true
-action_mode = 0
-text = "Graphics"
-
-[node name="Other Options" type="Button" parent="Tabs/HBoxContainer" unique_id=226616393]
-layout_mode = 2
-toggle_mode = true
-text = "Other options"
-
-[node name="Container2" type="Container" parent="." unique_id=1926151212]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Audio" type="MarginContainer" parent="Container2" unique_id=298186906]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Container2/Audio" unique_id=1312675949]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Container2/Audio/VBoxContainer" unique_id=1903205262]
+[node name="Label" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1903205262]
 layout_mode = 2
 text = "Volume Slider"
 
-[node name="Volume" type="HSlider" parent="Container2/Audio/VBoxContainer" unique_id=1161706560]
+[node name="Volume" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=1161706560]
 layout_mode = 2
 tooltip_text = "Volume Slider"
 min_value = -20.0
 max_value = 6.0
 ticks_position = 3
 
-[node name="Label3" type="Label" parent="Container2/Audio/VBoxContainer" unique_id=1660850447]
+[node name="Label3" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1660850447]
 layout_mode = 2
 text = "Mute Game"
 
-[node name="CheckButton" type="CheckButton" parent="Container2/Audio/VBoxContainer" unique_id=758844029]
+[node name="CheckButton" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=758844029]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Graphics" type="MarginContainer" parent="Container2" unique_id=1364994580]
-unique_name_in_owner = true
+[node name="Graphics" type="MarginContainer" parent="Tabs" unique_id=1364994580]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Graphics" unique_id=618764756]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Container2/Graphics" unique_id=618764756]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="Container2/Graphics/VBoxContainer" unique_id=1725727343]
+[node name="Label2" type="Label" parent="Tabs/Graphics/VBoxContainer" unique_id=1725727343]
 layout_mode = 2
 text = "Resolution"
 
-[node name="Resolutions" type="OptionButton" parent="Container2/Graphics/VBoxContainer" unique_id=2008807326]
+[node name="Resolutions" type="OptionButton" parent="Tabs/Graphics/VBoxContainer" unique_id=2008807326]
 layout_mode = 2
 selected = 0
 item_count = 3
@@ -97,12 +72,24 @@ popup/item_1/id = 1
 popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 
+[node name="Other Options" type="Button" parent="Tabs" unique_id=226616393]
+visible = false
+layout_mode = 2
+toggle_mode = true
+text = "Other options"
+metadata/_tab_index = 2
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=303013095]
 stream = ExtResource("2_11dmk")
 autoplay = true
 
-[connection signal="toggled" from="Tabs/HBoxContainer/Audio" to="." method="_on_audio_toggled"]
-[connection signal="toggled" from="Tabs/HBoxContainer/Graphics" to="." method="_on_graphics_toggled"]
-[connection signal="value_changed" from="Container2/Audio/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="Container2/Audio/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="item_selected" from="Container2/Graphics/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=816931063]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+
+[connection signal="value_changed" from="Tabs/Audio/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Tabs/Audio/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Tabs/Graphics/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
