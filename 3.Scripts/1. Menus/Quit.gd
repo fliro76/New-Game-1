@@ -11,3 +11,5 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	print("Quit_Button_Pressed")
+	await get_tree().create_timer(0.1).timeout
+	get_tree().quit()
