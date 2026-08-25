@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://c28peinjbdy2o"]
+
+[ext_resource type="Script" uid="uid://dons3i012w1id" path="res://3.Scripts/1. Menus/Settings.gd" id="1_ua5vm"]
+[ext_resource type="AudioStream" uid="uid://cgjpskp3go7x6" path="res://erkanmanavoglu-generic-music-free-royalty-free-335442.mp3" id="2_11dmk"]
+
+[node name="1_1Settings" type="Control" unique_id=1166315716]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+script = ExtResource("1_ua5vm")
+
+[node name="Tabs" type="TabContainer" parent="." unique_id=897016297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+switch_on_drag_hover = false
+
+[node name="Audio" type="MarginContainer" parent="Tabs" unique_id=298186906]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Audio" unique_id=1312675949]
+layout_mode = 2
+
+[node name="Main Volume" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1903205262]
+layout_mode = 2
+text = "Main Volume"
+
+[node name="Main Volume2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=1161706560]
+layout_mode = 2
+tooltip_text = "Volume Slider"
+min_value = -20.0
+max_value = 6.0
+ticks_position = 3
+
+[node name="Mute Game" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1361639505]
+layout_mode = 2
+text = "Mute Game"
+
+[node name="Mute Game2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=67756606]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Music" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=2064654342]
+layout_mode = 2
+text = "Music"
+
+[node name="Music2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=695836562]
+layout_mode = 2
+tooltip_text = "Volume Slider"
+min_value = -20.0
+max_value = 6.0
+ticks_position = 3
+
+[node name="Mute Music" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=786812062]
+layout_mode = 2
+text = "Mute Music
+"
+
+[node name="Mute Music2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=1445029832]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="SFX" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1958842689]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="SFX2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=1549831243]
+layout_mode = 2
+tooltip_text = "Volume Slider"
+min_value = -20.0
+max_value = 6.0
+ticks_position = 3
+
+[node name="Mute SFX" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1660850447]
+layout_mode = 2
+text = "Mute SFX"
+
+[node name="Mute SFX2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=758844029]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Graphics" type="MarginContainer" parent="Tabs" unique_id=1364994580]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Graphics" unique_id=618764756]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tabs/Graphics/VBoxContainer" unique_id=1725727343]
+layout_mode = 2
+text = "Resolution"
+
+[node name="Resolutions" type="OptionButton" parent="Tabs/Graphics/VBoxContainer" unique_id=2008807326]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Other Options" type="Button" parent="Tabs" unique_id=226616393]
+visible = false
+layout_mode = 2
+toggle_mode = true
+text = "Other options"
+metadata/_tab_index = 2
+
+[node name="Exit" type="Button" parent="." unique_id=465890782]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004166667
+anchor_top = 0.9
+anchor_right = 0.19791667
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=303013095]
+stream = ExtResource("2_11dmk")
+autoplay = true
+
+[connection signal="value_changed" from="Tabs/Audio/VBoxContainer/Main Volume2" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="Tabs/Audio/VBoxContainer/Mute SFX2" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="Tabs/Graphics/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,12 +1,18 @@
 extends Node
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# 1. Get a reference to the parent node
+	var parent_button = get_parent()
+	
+	# 2. Check if the parent is actually a Button and connect its signal
+	if parent_button is Button:
+		parent_button.pressed.connect(_on_parent_pressed)
 
+# 3. This function runs automatically whenever the parent button is pressed
+func _on_parent_pressed() -> void:
+	print("The parent button was pressed!")
+	
 
-func _on_pressed() -> void:
-	print("Setting_Button_Pressed")
 
 # Volume Slider
 func _on_volume_value_changed(value:):
@@ -25,3 +31,9 @@ func _on_resolutions_item_selected(index: int) -> void:
 			DisplayServer.window_set_size(Vector2(1600,900))
 		2:
 			DisplayServer.window_set_size(Vector2(1280,720))
+
+# Signal to tell the parent menu that settings are closed
+signal closed
+func _on_exit_pressed() -> void:
+	emit_signal("closed")
+	queue_free() # Destroys the settings menu to clean up memory
