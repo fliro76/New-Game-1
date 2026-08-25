@@ -15,13 +15,16 @@ run/main_scene="uid://csg48dukmh0h8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://2.Assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bvfvwpahpfpml"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [physics]
 
