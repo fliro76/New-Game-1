@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dd40l4mtmhv4b"]
+
+[ext_resource type="AudioStream" uid="uid://cgjpskp3go7x6" path="res://MusicManager/erkanmanavoglu-generic-music-free-royalty-free-335442.mp3" id="1_21d6x"]
+[ext_resource type="Script" uid="uid://6o5cx4syk85u" path="res://MusicManager/music_manager.gd" id="2_8g478"]
+
+[node name="MusicManager" type="AudioStreamPlayer2D" unique_id=666191871]
+process_mode = 3
+stream = ExtResource("1_21d6x")
+autoplay = true
+script = ExtResource("2_8g478")

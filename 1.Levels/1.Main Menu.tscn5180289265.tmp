@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dh6lttmk2k50s" path="res://2.Assets/icon.svg" id="1_4ceyp"]
 [ext_resource type="Script" uid="uid://bdatt2lwfg0uk" path="res://3.Scripts/1. Menus/1.main_menu.gd" id="1_05pyj"]
+[ext_resource type="Script" uid="uid://d32eu4sjvkhlr" path="res://3.Scripts/1. Menus/Play.gd" id="2_r8kir"]
+[ext_resource type="Script" uid="uid://4mw2w0qixxn1" path="res://3.Scripts/1. Menus/Quit.gd" id="3_3nmh5"]
+[ext_resource type="PackedScene" uid="uid://c28peinjbdy2o" path="res://2.Assets/Scenes/1.1 Settings.tscn" id="3_p75y0"]
 
 [node name="1_mainMenu2" type="Control" unique_id=1688911920]
 layout_mode = 3
@@ -52,6 +55,7 @@ offset_bottom = 157.9082
 grow_horizontal = 2
 text = "Play"
 icon = ExtResource("1_4ceyp")
+script = ExtResource("2_r8kir")
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="Menu Buttons/ItemList" unique_id=487469958]
@@ -68,6 +72,16 @@ text = "Settings"
 icon = ExtResource("1_4ceyp")
 metadata/_edit_use_anchors_ = true
 
+[node name="1_1Settings" parent="Menu Buttons/ItemList/Settings" unique_id=1166315716 instance=ExtResource("3_p75y0")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.8950001
+anchor_right = 2.6560001
+anchor_bottom = 2.792
+offset_top = -0.018066406
+offset_right = 0.77734375
+offset_bottom = 0.64505005
+
 [node name="Quit" type="Button" parent="Menu Buttons/ItemList" unique_id=1842087733]
 layout_mode = 1
 anchors_preset = -1
@@ -78,11 +92,9 @@ offset_bottom = 472.19397
 grow_horizontal = 2
 text = "Quit"
 icon = ExtResource("1_4ceyp")
+script = ExtResource("3_3nmh5")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Menu Buttons/ItemList/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu Buttons/ItemList/Play" to="Menu Buttons/ItemList/Play" method="_on_pressed"]
-[connection signal="pressed" from="Menu Buttons/ItemList/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu Buttons/ItemList/Settings" to="Menu Buttons/ItemList/Settings" method="_on_pressed"]
-[connection signal="pressed" from="Menu Buttons/ItemList/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Menu Buttons/ItemList/Quit" to="Menu Buttons/ItemList/Quit" method="_on_pressed"]
