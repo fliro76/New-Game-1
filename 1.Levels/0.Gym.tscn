@@ -1,3 +1,99 @@
 [gd_scene format=3 uid="uid://bff2bkyy0fflk"]
 
-[node name="0_gym" type="Node2D" unique_id=732809974]
+[ext_resource type="Script" uid="uid://c52ddx08fpfwl" path="res://3.Scripts/0. Gym/0.gym.gd" id="1_ji0qn"]
+
+[sub_resource type="FontVariation" id="FontVariation_u1y5f"]
+
+[sub_resource type="Theme" id="Theme_uud5k"]
+Button/font_sizes/font_size = 40
+Button/fonts/font = SubResource("FontVariation_u1y5f")
+
+[node name="0_gym" type="Control" unique_id=2059038083]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ji0qn")
+
+[node name="Upgrade 1" type="Button" parent="." unique_id=865610085]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 893.0
+offset_right = 210.0
+offset_bottom = 1050.0
+text = "Upgrade 1"
+
+[node name="Upgrade 2" type="Button" parent="." unique_id=49553]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 893.0
+offset_right = 389.0
+offset_bottom = 1050.0
+text = "Upgrade 2"
+
+[node name="Upgrade 3" type="Button" parent="." unique_id=198598917]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 893.0
+offset_right = 572.0
+offset_bottom = 1050.0
+text = "Upgrade 3"
+
+[node name="Upgrade 4" type="Button" parent="." unique_id=1551457928]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 893.0
+offset_right = 753.0
+offset_bottom = 1050.0
+text = "Upgrade 1"
+
+[node name="Upgrade 5" type="Button" parent="." unique_id=1867325353]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 893.0
+offset_right = 932.0
+offset_bottom = 1050.0
+text = "Upgrade 2"
+
+[node name="Upgrade 6" type="Button" parent="." unique_id=1365206053]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 893.0
+offset_right = 1115.0
+offset_bottom = 1050.0
+text = "Upgrade 3"
+
+[node name="Folder 1" type="Control" parent="." unique_id=258184766]
+anchors_preset = 0
+offset_left = 986.0
+offset_top = 510.00003
+offset_right = 1026.0
+offset_bottom = 550.0
+
+[node name="Button" type="Button" parent="Folder 1" unique_id=821674783]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -24.650002
+anchor_top = -12.750001
+anchor_right = 23.35
+anchor_bottom = 14.250001
+offset_left = 886.00006
+offset_top = 445.9996
+offset_right = -837.0
+offset_bottom = -570.99963
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Click here"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Folder 1" unique_id=415846278]
+layout_mode = 0
+offset_left = -986.0
+offset_top = -510.00003
+offset_right = -792.0
+offset_bottom = -421.00003
+text = "Clicks:"
+
+[connection signal="pressed" from="Folder 1/Button" to="." method="_on_button_pressed"]
