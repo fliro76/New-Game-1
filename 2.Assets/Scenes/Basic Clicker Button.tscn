@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dorugjqww8rx1"]
+
+[ext_resource type="Script" uid="uid://co67w22yh7afo" path="res://3.Scripts/0. Gym/clicker.gd" id="1_845vm"]
+
+[sub_resource type="FontVariation" id="FontVariation_u1y5f"]
+
+[sub_resource type="Theme" id="Theme_uud5k"]
+Button/font_sizes/font_size = 40
+Button/fonts/font = SubResource("FontVariation_u1y5f")
+
+[node name="Folder 1" type="Control" unique_id=108643861 node_paths=PackedStringArray("Clicks")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 986.0
+offset_top = 510.00003
+offset_right = 1026.0
+offset_bottom = 550.0
+script = ExtResource("1_845vm")
+Clicks = NodePath("Clicks")
+
+[node name="Button" type="Button" parent="." unique_id=1223168089]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -24.650002
+anchor_top = -12.750001
+anchor_right = 23.35
+anchor_bottom = 14.250001
+offset_left = 886.00006
+offset_top = 445.9996
+offset_right = -837.0
+offset_bottom = -570.99963
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Click here"
+
+[node name="Clicks" type="Label" parent="." unique_id=1413124073]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -24.650002
+anchor_top = -12.750001
+anchor_right = 23.35
+anchor_bottom = 14.250001
+offset_left = 863.00006
+offset_top = 243.9996
+offset_right = -863.0
+offset_bottom = -746.99963
+theme_type_variation = &"HeaderLarge"
+text = "Clicks: <Value>"
+autowrap_trim_flags = 128
+uppercase = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

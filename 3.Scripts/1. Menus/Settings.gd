@@ -31,10 +31,13 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 func _on_resolutions_item_selected(index: int) -> void:
 	match index:
 		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_size(Vector2(1920,1080))
 		1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_size(Vector2(1600,900))
 		2:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_size(Vector2(1280,720))
 #Screen setting
 func _on_screen_setting_item_selected(index: int) -> void:
@@ -61,5 +64,5 @@ func _on_exit_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	print("Quitting from Settings")
-	await 0.5
+	await  get_tree().create_timer(0.1).timeout
 	get_tree().quit()

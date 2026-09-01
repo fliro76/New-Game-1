@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://bff2bkyy0fflk"]
 
 [ext_resource type="Script" uid="uid://c52ddx08fpfwl" path="res://3.Scripts/0. Gym/0.gym.gd" id="1_ji0qn"]
-[ext_resource type="PackedScene" uid="uid://dorugjqww8rx1" path="res://2.Assets/Scenes/Basic Clicker Button.tscn" id="2_7i6vc"]
+[ext_resource type="Script" uid="uid://co67w22yh7afo" path="res://3.Scripts/0. Gym/clicker.gd" id="2_7i6vc"]
+
+[sub_resource type="FontVariation" id="FontVariation_u1y5f"]
+
+[sub_resource type="Theme" id="Theme_uud5k"]
+Button/font_sizes/font_size = 40
+Button/fonts/font = SubResource("FontVariation_u1y5f")
 
 [node name="0_gym" type="Control" unique_id=2059038083]
 process_mode = 1
@@ -60,14 +66,36 @@ offset_right = 158.0
 offset_bottom = 1084.0
 text = "Upgrade 3"
 
-[node name="Folder 1" parent="Clicker" unique_id=108643861 instance=ExtResource("2_7i6vc")]
+[node name="Folder 1" type="Control" parent="Clicker" unique_id=258184766]
+anchors_preset = 0
+offset_left = 986.0
+offset_top = 510.00003
+offset_right = 1026.0
+offset_bottom = 550.0
+script = ExtResource("2_7i6vc")
+
+[node name="Button" type="Button" parent="Clicker/Folder 1" unique_id=821674783]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 991.0
-offset_top = 518.0
-offset_right = -889.0
-offset_bottom = -522.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = -24.650002
+anchor_top = -12.750001
+anchor_right = 23.35
+anchor_bottom = 14.250001
+offset_left = 886.00006
+offset_top = 445.9996
+offset_right = -837.0
+offset_bottom = -570.99963
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Click here"
+
+[node name="Clicks" type="Label" parent="Clicker/Folder 1" unique_id=1967478403]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -266.00003
+offset_right = 71.0
+offset_bottom = -177.00003
+text = "clicks : <value>"
+
+[connection signal="pressed" from="Clicker/Folder 1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Clicker/Folder 1/Button" to="Clicker/Folder 1" method="_on_button_pressed"]
