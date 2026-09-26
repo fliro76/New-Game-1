@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bff2bkyy0fflk"]
+
+[ext_resource type="Script" uid="uid://c52ddx08fpfwl" path="res://3.Scripts/0. Gym/0.gym.gd" id="1_ji0qn"]
+[ext_resource type="PackedScene" uid="uid://dorugjqww8rx1" path="res://2.Assets/Scenes/Basic Clicker Button.tscn" id="2_7i6vc"]
+
+[node name="0_gym" type="Control" unique_id=2059038083]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ji0qn")
+
+[node name="Clicker" type="Control" parent="." unique_id=1626490141]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Folder 1" parent="Clicker" unique_id=108643861 instance=ExtResource("2_7i6vc")]
+layout_mode = 1

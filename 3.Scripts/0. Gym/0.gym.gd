@@ -8,12 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-
-func _on_button_pressed() -> void:
-	print("Button Pressed")
-
-
-func _process(delta):
+func _process(_delta):
 #Settings
 	if Input.is_action_just_pressed("Pause"):
 			# 1. Instance the scene
