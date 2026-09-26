@@ -7,4 +7,5 @@
 process_mode = 3
 stream = ExtResource("1_21d6x")
 autoplay = true
+bus = &"Music"
 script = ExtResource("2_8g478")

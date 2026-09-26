@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dorugjqww8rx1"]
 
 [ext_resource type="Script" uid="uid://co67w22yh7afo" path="res://3.Scripts/0. Gym/clicker.gd" id="1_845vm"]
+[ext_resource type="Texture2D" uid="uid://bgttypa67b6hh" path="res://2.Assets/PNGs/Horse Button Clicker.png" id="2_bpdsr"]
+[ext_resource type="AudioStream" uid="uid://b07mko7r2346t" path="res://2.Assets/Audio/Untitled.mp3" id="3_xl01y"]
+[ext_resource type="Texture2D" uid="uid://b7pth57tq5dn5" path="res://2.Assets/PNGs/hay.png" id="4_l750w"]
+[ext_resource type="Texture2D" uid="uid://c00fu6xcoeygh" path="res://2.Assets/PNGs/Stable.png" id="5_4kjwr"]
+[ext_resource type="Texture2D" uid="uid://nm1n2t56lrof" path="res://2.Assets/PNGs/StableLayer2.png" id="6_4kjwr"]
 
 [sub_resource type="FontVariation" id="FontVariation_u1y5f"]
 
@@ -8,45 +13,221 @@
 Button/font_sizes/font_size = 40
 Button/fonts/font = SubResource("FontVariation_u1y5f")
 
-[node name="Folder 1" type="Control" unique_id=108643861 node_paths=PackedStringArray("Clicks")]
+[node name="Folder 1" type="Control" unique_id=108643861 node_paths=PackedStringArray("Clicks", "Click_Noise", "Upgrade1", "Upgrade1Visual", "Upgrade1Inv", "Upgrade2", "Currentclickpower")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 986.0
-offset_top = 510.00003
-offset_right = 1026.0
-offset_bottom = 550.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_845vm")
 Clicks = NodePath("Clicks")
+Click_Noise = NodePath("Button/Click_Noise")
+Upgrade1 = NodePath("Upgrade1")
+Upgrade1Visual = NodePath("Hay")
+Upgrade1Inv = NodePath("Inventory/Upgrade1Inv")
+Upgrade2 = NodePath("Upgrade2")
+Currentclickpower = NodePath("Click power")
 
-[node name="Button" type="Button" parent="." unique_id=1223168089]
+[node name="Button" type="TextureButton" parent="." unique_id=2123999035]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -24.650002
-anchor_top = -12.750001
-anchor_right = 23.35
-anchor_bottom = 14.250001
-offset_left = 886.00006
-offset_top = 445.9996
-offset_right = -837.0
-offset_bottom = -570.99963
-scale = Vector2(0.79999924, 0.79999924)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.99994
+offset_top = -316.0
+offset_right = 380.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2808565, 1.1729382)
+pivot_offset = Vector2(260.31238, 219.06247)
 theme = SubResource("Theme_uud5k")
-text = "Click here"
+texture_normal = ExtResource("2_bpdsr")
+
+[node name="Click_Noise" type="AudioStreamPlayer" parent="Button" unique_id=1891851768]
+stream = ExtResource("3_xl01y")
+max_polyphony = 1000
+bus = &"Sound FX"
 
 [node name="Clicks" type="Label" parent="." unique_id=1413124073]
+z_index = 6
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -24.650002
-anchor_top = -12.750001
-anchor_right = 23.35
-anchor_bottom = 14.250001
-offset_left = 863.00006
-offset_top = 243.9996
-offset_right = -863.0
-offset_bottom = -746.99963
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.50006
+offset_right = 113.5
+offset_bottom = 39.0
+grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
 text = "Clicks: <Value>"
 autowrap_trim_flags = 128
 uppercase = true
 
+[node name="Click power" type="Label" parent="." unique_id=411498409]
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.559
+anchor_bottom = 0.036000002
+offset_left = -953.0
+offset_top = 1.0
+offset_right = -755.28
+offset_bottom = 1.1199989
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "ClickPower: <value>"
+autowrap_trim_flags = 128
+uppercase = true
+
+[node name="Inventory" type="Label" parent="." unique_id=1848272947]
+layout_mode = 0
+offset_left = 1697.0
+offset_top = 19.0
+offset_right = 1792.0
+offset_bottom = 42.0
+scale = Vector2(1.4291431, 1.3332621)
+text = "Inventory"
+uppercase = true
+
+[node name="Upgrade1Inv" type="Label" parent="Inventory" unique_id=1765083542]
+layout_mode = 0
+offset_left = -8.541504e-05
+offset_top = 23.25125
+offset_right = 39.999916
+offset_bottom = 46.25125
+text = "HayOwned: "
+
+[node name="Upgrade2Inv" type="Label" parent="Inventory" unique_id=1685049403]
+layout_mode = 0
+offset_left = -8.541504e-05
+offset_top = 46.50249
+offset_right = 39.999916
+offset_bottom = 69.50249
+text = "Silly Hat Owned: "
+
+[node name="Upgrade1" type="Button" parent="." unique_id=742869245]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -426.0
+offset_right = -647.3745
+offset_bottom = -363.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Hay"
+
+[node name="Upgrade2" type="Button" parent="." unique_id=964145477]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -347.0
+offset_right = -647.3745
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Silly Hat"
+
+[node name="Upgrade3" type="Button" parent="." unique_id=1979796379]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -260.0
+offset_right = -647.3745
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Golden Tooth"
+
+[node name="Upgrade4" type="Button" parent="." unique_id=1444517147]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -93.0
+offset_right = -647.3745
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Car"
+
+[node name="Upgrade5" type="Button" parent="." unique_id=392474311]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -171.0
+offset_right = -647.3745
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "Horn"
+
+[node name="Upgrade6" type="Button" parent="." unique_id=1109948330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -959.99994
+offset_top = 1.0
+offset_right = -526.9999
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79999924, 0.79999924)
+theme = SubResource("Theme_uud5k")
+text = "The Ultimate Upgrade"
+
+[node name="Hay" type="Sprite2D" parent="." unique_id=1441820992]
+visible = false
+z_index = -1
+position = Vector2(1393, 541)
+texture = ExtResource("4_l750w")
+
+[node name="Stable" type="Sprite2D" parent="." unique_id=39114594]
+z_index = -2
+position = Vector2(961, 540)
+texture = ExtResource("5_4kjwr")
+
+[node name="StableLayer2" type="Sprite2D" parent="." unique_id=240783790]
+position = Vector2(960, 540)
+texture = ExtResource("6_4kjwr")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_2_pressed"]

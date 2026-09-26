@@ -42,16 +42,15 @@ text = "Main Volume"
 [node name="Main Volume2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=1161706560]
 layout_mode = 2
 tooltip_text = "Volume Slider"
+min_value = -20.0
 max_value = 6.0
-value = 1.0
-tick_count = 7
 ticks_position = 3
 
-[node name="Mute Main" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1361639505]
+[node name="Mute Game" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1361639505]
 layout_mode = 2
 text = "Mute Game"
 
-[node name="Mute Main2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=67756606]
+[node name="Mute Game2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=67756606]
 layout_mode = 2
 size_flags_horizontal = 0
 
@@ -62,14 +61,14 @@ text = "Music"
 [node name="Music2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=695836562]
 layout_mode = 2
 tooltip_text = "Volume Slider"
+min_value = -20.0
 max_value = 6.0
-value = 1.0
-tick_count = 7
 ticks_position = 3
 
 [node name="Mute Music" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=786812062]
 layout_mode = 2
-text = "Mute Music"
+text = "Mute Music
+"
 
 [node name="Mute Music2" type="CheckButton" parent="Tabs/Audio/VBoxContainer" unique_id=1445029832]
 layout_mode = 2
@@ -82,9 +81,8 @@ text = "Sound Effects"
 [node name="SFX2" type="HSlider" parent="Tabs/Audio/VBoxContainer" unique_id=1549831243]
 layout_mode = 2
 tooltip_text = "Volume Slider"
+min_value = -20.0
 max_value = 6.0
-value = 1.0
-tick_count = 7
 ticks_position = 3
 
 [node name="Mute SFX" type="Label" parent="Tabs/Audio/VBoxContainer" unique_id=1660850447]
@@ -149,11 +147,9 @@ text = "To be determined."
 self_modulate = Color(1.7824936, 0.44679928, 0.24130787, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.86944443
+anchor_top = 0.8981481
 anchor_right = 0.19375
-anchor_bottom = 0.96944445
-offset_right = 29.25
-offset_bottom = 27.0
+anchor_bottom = 0.99814814
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit"
@@ -164,23 +160,18 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(1.7824936, 0.44679928, 0.24130787, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.763
-anchor_top = 0.869
+anchor_left = 0.80625
+anchor_top = 0.8981481
 anchor_right = 1.0
 anchor_bottom = 0.99814814
-offset_left = 0.040039063
-offset_top = 0.47998047
-offset_right = 1.25
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Quit Game"
 alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="value_changed" from="Tabs/Audio/VBoxContainer/Main Volume2" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="Tabs/Audio/VBoxContainer/Mute Main2" to="." method="_on_mute_game_2_toggled"]
-[connection signal="value_changed" from="Tabs/Audio/VBoxContainer/Music2" to="." method="_on_music_2_value_changed"]
-[connection signal="toggled" from="Tabs/Audio/VBoxContainer/Mute Music2" to="." method="_on_mute_music_2_toggled"]
+[connection signal="toggled" from="Tabs/Audio/VBoxContainer/Mute Game2" to="." method="_on_mute_game_2_toggled"]
 [connection signal="value_changed" from="Tabs/Audio/VBoxContainer/SFX2" to="." method="_on_sfx_2_value_changed"]
 [connection signal="toggled" from="Tabs/Audio/VBoxContainer/Mute SFX2" to="." method="_on_check_button_toggled"]
 [connection signal="item_selected" from="Tabs/Graphics/VBoxContainer/Resolutions2" to="." method="_on_resolutions_item_selected"]
